@@ -149,8 +149,6 @@ resource "azurerm_linux_virtual_machine" "vm" {
       "sudo apt update -y",  # Update package lists (for ubuntu)
       "sudo apt install -y python3 python3-pip",
       "pip3 install --user flask",
-      "export PATH=$PATH:$HOME/.local/bin >> ~/.bashrc",
-      "source ~/.bashrc",
       "python3 app.py &"
     ]
   }
@@ -210,3 +208,5 @@ terraform init
 terraform plan
 terraform apply
 ```
+
+Developer can ssh into vm using public_ip, run the app.
